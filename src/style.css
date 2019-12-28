@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #e5e5e5;
+}
+
+.operationsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 180px;
+    margin-top: 10px;
+}
+
+.tooltipSymbol {
+    width: 20px;
+    height: 19px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.tooltipSymbol:hover:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 25px;
+    bottom: -2px;
+    width: 50px;
+    padding: 5px 10px 5px 10px;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    font-weight: 100;
+    color: #fff;
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 5% 99%, 5% 65%, 0 50%, 5% 35%);
+    -webkit-clip-path: polygon(5% 0, 100% 0, 100% 100%, 5% 99%, 5% 65%, 0 50%, 5% 35%);
+}
+
+.textInputContainer {
+    margin: 10px;
+    padding: 6px 9px;
+    background: #f50057;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.textInputContainer--small {
+    padding: 3px 9px;
+}
+
+.textInput {
+    width: 50px;
+    border-radius: 4px;
+    padding: 5px;
+    border: none;
+}
+
+.textInput--small {
+    width: 30px;
+}
+
+.btn {
+    width: 150px;
+    margin: 10px;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: background 0.25s ease-in-out, transform 0.5s linear;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn--arrow {
+    width: 30px;
+    padding: 3px;
+    margin: 4px 6px;
+}
+
+.btn--colorDefault {
+    background: #3f51b5;
+    color: #fff;
+}
+
+.btn--colorRed {
+    background: #ff0000;
+    color: #fff;
+}
+
+.btn--colorDefault:hover,
+.btn--colorDefault:focus {
+    background: #5273d8;
+}
+
+.btn--colorRed:hover,
+.btn--colorRed:focus {
+    background: #ff5959;
+}
+
+.btn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -3px;
+}
+
+.btn:active {
+    transform: scale(0.8);
+}
+
+.messageOff {
+    display: none;
+}
+
+.messageOn {
+    display: block;
+    color: #38c925;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.dataAreas {
+    border: 1px solid #bababa;
+    margin: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.15s linear;
+}
+
+.dataAreas:focus {
+    box-shadow: 0px 0px 4px 1px rgba(0, 170, 255, 1);
+    outline: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no" />
+    <title>Data Modify Tool</title>
+    <meta name="description" content="Modify pasted data - change from columns to choosen separator and vice versa, add chars at the start of each row, change chars, remove duplicates" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+
+</head>
+
+<body>
+    <div class="operationsContainer">
+        <div class="tooltipSymbol" data-tooltip="v1.2.3">i
+        </div>
+        <div class="textInputContainer">
+            <span>Separator:</span>
+            <input type="text" id="delimiter" value="," class="textInput" />
+        </div>
+        <input type="button" id="colToSepBtn" value="Column &rarr; Separator" class="btn btn--colorDefault" />
+        <input type="button" id="sepToColBtn" value="Separator &rarr; Column" class="btn btn--colorDefault" />
+        <input type="button" id="firstSymbBtn" value="Start row with..." class="btn btn--colorDefault" />
+        <input type="button" id="delDuplBtn" value="Remove duplicates" class="btn btn--colorDefault" />
+        <div class="textInputContainer textInputContainer--small">
+            <span style="display: block; text-align: center">Change:</span>
+            <input type="text" id="charChangeFrom" class="textInput textInput--small" />
+            <input type="button" id="replaceBtn" value="&rarr;" class="btn btn--arrow btn--colorDefault" />
+            <input type="text" id="charChangeTo" class="textInput textInput--small" />
+        </div>
+        <input type="button" id="clearBtn" value="Clear" class="btn btn--colorRed" />
+        <span class="messageOff">Copied to clipboard</span>
+    </div>
+
+    <textarea id="field1" rows="30" cols="40" class="dataAreas" autofocus></textarea>
+
+    <textarea id="field2" rows="30" cols="40" class="dataAreas"></textarea>
+
+    <script src="./index.js"></script>
+</body>
+</html>
