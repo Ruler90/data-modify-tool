@@ -1,5 +1,7 @@
 # Data Modify Tool
 
+0. You can check it out as a [Chrome Extension](https://chrome.google.com/webstore/detail/data-modify-tool/cogafmjhbnldmcigfgciljkeaifdljgm):
+
 1. Project started in June 2019 and finished on June 23, 2019.
 Updated in July, October and December 2019.
 

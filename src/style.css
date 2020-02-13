@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
 }
 
 .operationsContainer {
@@ -10,6 +11,7 @@ body {
     align-items: center;
     min-width: 180px;
     margin-top: 10px;
+    font-size: 15px;
 }
 
 .tooltipSymbol {
@@ -68,6 +70,7 @@ body {
     margin: 10px;
     border-radius: 4px;
     padding: 8px;
+    font-size: 14px;
     cursor: pointer;
     text-align: center;
     border: 1px solid transparent;

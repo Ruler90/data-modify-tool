@@ -1,6 +1,16 @@
 
 = = = = = = = = = = =
 
+### v1.2.4 - 13.02.2020
+
+- Dodanie fonta Roboto.
+
+- Ustawienie wielkości fonta dla OperationsContainera i dla buttonów.
+
+- Przygotowanie Chrome Extension i dodanie archiwum do folderu z projektem.
+
+= = = = = = = = = = =
+
 ### v1.2.3 - 28.12.2019
 
 - Przygotowanie plików do umieszczenia w publicznym repozytorium.
