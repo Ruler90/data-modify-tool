@@ -15,5 +15,3 @@ Updated in July, October and December 2019.
 - and maybe much more...
 
 3. After performing every operation the result will be shown in the second textarea and will be automatically copied to clipboard.
-
-4. You can find one-file version (+ favicon) in dist folder.

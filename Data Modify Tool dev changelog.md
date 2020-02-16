@@ -1,6 +1,12 @@
 
 = = = = = = = = = = =
 
+### v1.2.5 - 15.02.2020
+
+- Dodanie w manifeście Chrome Extension "offline_enabled": true, żeby pokazywało w Chrome Store, że rozszerzenie działa też offline.
+
+= = = = = = = = = = =
+
 ### v1.2.4 - 13.02.2020
 
 - Dodanie fonta Roboto.
