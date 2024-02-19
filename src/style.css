@@ -14,33 +14,6 @@ body {
     font-size: 15px;
 }
 
-.tooltipSymbol {
-    width: 20px;
-    height: 19px;
-    border: 1px solid #000;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: 900;
-    position: relative;
-    background: #fff;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-}
-
-.tooltipSymbol:hover:after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 25px;
-    bottom: -2px;
-    width: 50px;
-    padding: 5px 10px 5px 10px;
-    background: rgba(0, 0, 0, 0.7);
-    font-size: 12px;
-    font-weight: 100;
-    color: #fff;
-    clip-path: polygon(5% 0, 100% 0, 100% 100%, 5% 99%, 5% 65%, 0 50%, 5% 35%);
-    -webkit-clip-path: polygon(5% 0, 100% 0, 100% 100%, 5% 99%, 5% 65%, 0 50%, 5% 35%);
-}
-
 .textInputContainer {
     margin: 10px;
     padding: 6px 9px;
@@ -113,11 +86,11 @@ body {
     transform: scale(0.8);
 }
 
-.messageOff {
+.message {
     display: none;
 }
 
-.messageOn {
+.message--displayed {
     display: block;
     color: #38c925;
     font-size: 18px;

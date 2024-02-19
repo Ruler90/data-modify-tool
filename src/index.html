@@ -15,24 +15,22 @@
 
 <body>
     <div class="operationsContainer">
-        <div class="tooltipSymbol" data-tooltip="v1.2.5">i
-        </div>
         <div class="textInputContainer">
             <span>Separator:</span>
             <input type="text" id="delimiter" value="," class="textInput" />
         </div>
-        <input type="button" id="colToSepBtn" value="Column &rarr; Separator" class="btn btn--colorDefault" />
-        <input type="button" id="sepToColBtn" value="Separator &rarr; Column" class="btn btn--colorDefault" />
-        <input type="button" id="firstSymbBtn" value="Start row with..." class="btn btn--colorDefault" />
-        <input type="button" id="delDuplBtn" value="Remove duplicates" class="btn btn--colorDefault" />
+        <input type="button" id="columnToSeparatorBtn" value="Column &rarr; Separator" class="btn btn--colorDefault" />
+        <input type="button" id="separatorToColumnBtn" value="Separator &rarr; Column" class="btn btn--colorDefault" />
+        <input type="button" id="startRowWithBtn" value="Start row with..." class="btn btn--colorDefault" />
+        <input type="button" id="removeDuplicatesBtn" value="Remove duplicates" class="btn btn--colorDefault" />
         <div class="textInputContainer textInputContainer--small">
             <span style="display: block; text-align: center">Change:</span>
-            <input type="text" id="charChangeFrom" class="textInput textInput--small" />
+            <input type="text" id="charChangeFromInput" class="textInput textInput--small" />
             <input type="button" id="replaceBtn" value="&rarr;" class="btn btn--arrow btn--colorDefault" />
-            <input type="text" id="charChangeTo" class="textInput textInput--small" />
+            <input type="text" id="charChangeToInput" class="textInput textInput--small" />
         </div>
         <input type="button" id="clearBtn" value="Clear" class="btn btn--colorRed" />
-        <span class="messageOff">Copied to clipboard</span>
+        <span class="message">Copied to clipboard</span>
     </div>
 
     <textarea id="field1" rows="30" cols="40" class="dataAreas" autofocus></textarea>

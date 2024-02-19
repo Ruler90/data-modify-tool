@@ -1,78 +1,71 @@
-const newData = document.querySelector('#field2');
+const pastedDataTextField = document.querySelector('#field1');
+const newDataTextField = document.querySelector('#field2');
+const delimiterChar = document.querySelector('#delimiter');
+const charChangeFromInput = document.querySelector('#charChangeFromInput');
+const charChangeToInput = document.querySelector('#charChangeToInput');
+const columnToSeparatorBtn = document.querySelector('#columnToSeparatorBtn');
+const separatorToColumnBtn = document.querySelector('#separatorToColumnBtn');
+const startRowWithBtn = document.querySelector('#startRowWithBtn');
+const removeDuplicatesBtn = document.querySelector('#removeDuplicatesBtn');
+const replaceBtn = document.querySelector('#replaceBtn');
+const clearBtn = document.querySelector('#clearBtn');
+const msg = document.querySelector('.message');
 
 function columnToDelimiterSeparated () {
-  const pastedData = document.querySelector('#field1').value;
-  const delimiterChar = document.querySelector('#delimiter').value;
-  const modifiedData = pastedData.replace(/\n/g, delimiterChar);
-  newData.value = modifiedData;
+  const modifiedData = pastedDataTextField.value.replace(/\n/g, delimiterChar.value);
+  newDataTextField.value = modifiedData;
   selectAndCopy();
 }
 
 function delimiterToColumn () {
-  const pastedData = document.querySelector('#field1').value;
-  const delimiterChar = document.querySelector('#delimiter').value;
-  const splittedArr = pastedData.split(delimiterChar);
+  const splittedArr = pastedDataTextField.value.split(delimiterChar.value);
   const modifiedData = splittedArr.join('\n');
-  newData.value = modifiedData;
+  newDataTextField.value = modifiedData;
   selectAndCopy();
 }
 
 function insertCharAtRowsStart () {
-  const pastedData = document.querySelector('#field1').value;
-  const delimiterChar = document.querySelector('#delimiter').value;
-  const delimiterCharWithNewLine = '\n' + delimiterChar;
-  let modifiedData = pastedData.replace(/\n/g, delimiterCharWithNewLine);
-  modifiedData = delimiterChar + modifiedData;
-  newData.value = modifiedData;
+  const delimiterCharWithNewLine = '\n' + delimiterChar.value;
+  let modifiedData = pastedDataTextField.value.replace(/\n/g, delimiterCharWithNewLine);
+  modifiedData = delimiterChar.value + modifiedData;
+  newDataTextField.value = modifiedData;
   selectAndCopy();
 }
 
 function deleteDuplicates () {
-  const pastedData = document.querySelector('#field1').value;
-  const splittedArr = pastedData.split('\n');
+  const splittedArr = pastedDataTextField.value.split('\n');
   const noDuplicatesArr = [...new Set(splittedArr)];
   const modifiedData = noDuplicatesArr.join('\n');
-  newData.value = modifiedData;
+  newDataTextField.value = modifiedData;
   selectAndCopy();
 }
 
 function charReplace () {
-  const pastedData = document.querySelector('#field1').value;
-  const charChangeFromField = document.querySelector('#charChangeFrom').value;
   const specialCharsToCheck = /[|\\{}()[\]^$+*?.]/g;
-  const charChangeFrom = charChangeFromField.replace(specialCharsToCheck, '\\$&');
+  const charChangeFrom = charChangeFromInput.value.replace(specialCharsToCheck, '\\$&');
   const charChangeFromGlobal = new RegExp(charChangeFrom, 'g');
-  const charChangeTo = document.querySelector('#charChangeTo').value;
-  const modifiedData = pastedData.replace(charChangeFromGlobal, charChangeTo);
-  newData.value = modifiedData;
+  const modifiedData = pastedDataTextField.value.replace(charChangeFromGlobal, charChangeToInput.value);
+  newDataTextField.value = modifiedData;
   selectAndCopy();
 }
 
 function selectAndCopy () {
-  newData.select();
+  newDataTextField.select();
   document.execCommand('copy');
-  const msg = document.querySelector('.messageOff');
-  msg.className = 'messageOn';
+  msg?.classList.add('message--displayed');
   setTimeout(function () {
-    msg.className = 'messageOff';
+    msg?.classList.remove('message--displayed');
   }, 2500);
 }
 
 function clearField () {
-  const firstTextField = document.querySelector('#field1');
-  firstTextField.value = '';
-  firstTextField.select();
+  pastedDataTextField.value = '';
+  pastedDataTextField.select();
 }
 
-const colToSepBtn = document.querySelector('#colToSepBtn');
-colToSepBtn.addEventListener('click', columnToDelimiterSeparated);
-const sepToColBtn = document.querySelector('#sepToColBtn');
-sepToColBtn.addEventListener('click', delimiterToColumn);
-const firstSymbBtn = document.querySelector('#firstSymbBtn');
-firstSymbBtn.addEventListener('click', insertCharAtRowsStart);
-const delDuplBtn = document.querySelector('#delDuplBtn');
-delDuplBtn.addEventListener('click', deleteDuplicates);
-const replaceBtn = document.querySelector('#replaceBtn');
+columnToSeparatorBtn.addEventListener('click', columnToDelimiterSeparated);
+separatorToColumnBtn.addEventListener('click', delimiterToColumn);
+startRowWithBtn.addEventListener('click', insertCharAtRowsStart);
+removeDuplicatesBtn.addEventListener('click', deleteDuplicates);
 replaceBtn.addEventListener('click', charReplace);
-const clearBtn = document.querySelector('#clearBtn');
 clearBtn.addEventListener('click', clearField);
